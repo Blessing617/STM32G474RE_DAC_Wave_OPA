@@ -15,11 +15,21 @@
   * 使用陶晶驰TJC4827X243_011型号串口屏
   *
   * @IO
-  * 硬件串口(串口屏)     PC4 -> USART1_TX -> HMI_RX    PC5 -> USART1_RX -> HMI_TX
-  * OLED显示(软件IIC)   PB8 -> SDA                    PB9 -> SCL
   * 按键中断            PC13-> KEY
   * 信号输出            PB12-> OPAMP4_VOUT
   * PWM信号输出         PC0 -> TIM1_CH1
   *
+  * @模块接线
+  * OLED模块(软件IIC)  STM32G474RE
+  *      VCC   <------  5.0V      5V供电
+  *      GND   -------  GND       地
+  *      SCL   -------  PB9       IIC时钟线
+  *      SDA   -------  PB8       IIC数据线
+  *
+  * 串口屏模块         STM32G474RE
+  *      VCC   <------  5.0V      5V供电
+  *      GND   -------  GND       地
+  *      TX    ------>  PC5(RX)
+  *      RX    <------  PC4(TX)
   ******************************************************************************
   */
